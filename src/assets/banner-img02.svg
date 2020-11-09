@@ -1,0 +1,20 @@
+<svg 
+ xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="92px" height="58px">
+<defs>
+<linearGradient id="PSgrad_0" x1="0%" x2="0%" y1="0%" y2="100%">
+  <stop offset="0%" stop-color="rgb(96,78,255)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(96,78,255)" stop-opacity="0" />
+</linearGradient>
+<linearGradient id="PSgrad_1" x1="0%" x2="0%" y1="100%" y2="0%">
+  <stop offset="0%" stop-color="rgb(255,141,107)" stop-opacity="1" />
+  <stop offset="100%" stop-color="rgb(255,141,107)" stop-opacity="0" />
+</linearGradient>
+
+</defs>
+<path fill-rule="evenodd"  fill="url(#PSgrad_0)"
+ d="M-0.000,-0.000 L58.000,-0.000 L58.000,58.000 "/>
+<path fill-rule="evenodd"  fill="url(#PSgrad_1)"
+ d="M91.500,50.500 L50.000,50.500 L50.000,9.000 "/>
+</svg>
