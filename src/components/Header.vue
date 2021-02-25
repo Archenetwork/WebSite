@@ -1,6 +1,12 @@
 <template>
   <div class="nav">
-
+    <div class="logo"></div>
+    <span>FAQ</span>
+    <span>Blog</span>
+    <span>Forum</span>
+    <div class="button">
+      <span>Get APP</span>
+    </div>
   </div>
 </template>
 
@@ -10,11 +16,43 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .nav {
-    width: 1200px;
-    height: 90px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 40px;
+  margin: 0 auto;
+  width: 1200px;
+  height: 90px;
+  border-radius: 100px;
+  background: $nav-background;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 999;
+  .logo {
+    background-image: url('../assets/imgs/logo-icon.svg');
+    width: 44px;
+    height: 35px;
+    background-size: cover;
+  }
+  span {
+    font-size: 18px;
+    font-weight: bold;
+    color: #E5E5E5;
+  }
+  .button {
+    width: 164px;
+    height: 48px;
     border-radius: 100px;
-    background: $nav-background;
+    background: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 18px;
+      color: #000000;
+    }
+  }
 }
 </style>
