@@ -4,6 +4,12 @@
     <span>FAQ</span>
     <span>Blog</span>
     <span>Forum</span>
+    <dropdown
+      :options = "languageList"
+      :selected = "currentLanguage"
+      @updateOption = "updateOption"
+    >
+    </dropdown>
     <div class="button">
       <span>Get APP</span>
     </div>
@@ -11,8 +17,36 @@
 </template>
 
 <script>
+import dropdown from "@/components/Dropdown.vue";
 export default {
-
+  components: {
+    dropdown
+  },
+  data() {
+    return {
+      languageList: [
+        {
+          name: 'EN',
+          icon: 'iconlanguage-en'
+        },
+        {
+          name: 'CN',
+          icon: 'iconlanguage-cn'
+        }
+      ],
+      currentLanguage: {
+        name: 'EN',
+        icon: 'iconlanguage-en'
+      }
+    }
+  },
+  methods: {
+    updateOption(data){
+      this.$i18n.locale = data.name;
+      localStorage.setItem('languageName',data.name);
+      localStorage.setItem('languageIcon',data.icon);
+    }
+  }
 }
 </script>
 

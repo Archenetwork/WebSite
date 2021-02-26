@@ -5,8 +5,8 @@
         <div class="circle-outer">
           <div class="circle-inner">
             <div class="logo"></div>
-            <span class="subtitle">下一代去中心化金融协议构建方式</span>
-            <span class="title">让我们在Arche上构建【期权】</span>
+            <span class="subtitle">{{$t('home.title01')}}</span>
+            <span class="title">{{$t('home.title02')}}</span>
             <Button />
           </div>
         </div>
@@ -17,47 +17,60 @@
       <div class="page1-container">
         <div class="icon"></div>
         <div class="content">
-          <div class="content-title">Arche是什么</div>
+          <div class="content-title">{{$t('page1.title')}}</div>
           <div class="content-text">
-            Arche是一个合约工厂和一套智能合约协议标准。
+            {{$t('page1.content01')}}
           </div>
           <div class="content-text">
-            它实现了交易中最为简单的一套逻辑，既用A交换B。
+            {{$t('page1.content02')}}
           </div>
           <div class="content-text">
-            但不简单的是，我们为每一笔交易都生成了一个智能合约来约束它且给交易双方生成了一套可以证明自己会履行交易的ERC20凭证。
+            {{$t('page1.content03')}}
           </div>
           <div class="content-text">
-            因而，在这套协议上，我们可以像在现实生活中签合同一样，来约定双方的交易在何时发生、用什么标的物交易、保证金如何执行、惩罚如何执行等一些列操作。并且通过生成的ERC20凭证，做进一步的衍生品交易。
+            {{$t('page1.content04')}}
           </div>
         </div>
       </div>
       <div class="swiper-card">
         <Card card-color="#1A1A84">
           <template #card-title>
-            金融衍生品的基础设施
+            {{$t('page1.card01Title')}}
           </template>
           <template #card-content>
             <ul>
-              <li>将交易时间延后，你可以得到一个远期交换的合约产品。</li>
-              <li>将得到的凭证二次流转，你就可以得到一个期权类产品。</li>
-              <li>引入预言机，你可以在凭证基础上做出一个有爆仓效果的杠杆类产品。</li>
+              <li>{{$t('page1.card01Content01')}}</li>
+              <li>{{$t('page1.card01Content02')}}</li>
+              <li>{{$t('page1.card01Content03')}}</li>
+              <li>{{$t('page1.card01Content04')}}</li>
+              <li>{{$t('page1.card01Content05')}}</li>
             </ul>
           </template>
         </Card>
-        <Card card-color="#621A84" :style="{'margin-left': '20px'}"/>
+        <Card card-color="#621A84" :style="{'margin-left': '20px'}">
+          <template #card-title>
+            {{$t('page1.card02Title')}}
+          </template>
+          <template #card-content>
+            <ul>
+              <li>{{$t('page1.card02Content')}}</li>
+            </ul>
+          </template>
+        </Card>
+         <!-- <swiper class="swiper">
+          <swiper-slide>Slide 1</swiper-slide>
+          <swiper-slide>Slide 2</swiper-slide>
+          <swiper-slide>Slide 3</swiper-slide>
+        </swiper> -->
       </div>
     </div>
     <div class="page2">
       <!-- <Header /> -->
       <div class="page2-container">
         <div class="content">
-          <div class="content-title">Arche如何工作</div>
+          <div class="content-title">{{$t('page2.title')}}</div>
           <div class="content-text">
-            Arche有多个角色，其中最主要的就是合约创建人、合约执行人与合约。
-          </div>
-          <div class="content-text">
-            通过参数化的方式，你可以生成任何一种想要的金融衍生品合约。并且这些智能合约全部都是去中心化自主运行和生成的，无需担心被篡改等问题。
+            {{$t('page2.content01')}}
           </div>
         </div>
 
@@ -72,15 +85,15 @@
         </div>
         <div class="info">
           <div class="create">
-            <div class="title">合约创建人</div>
+            <div class="title">{{$t('page2.contractCreator')}}</div>
             <div class="content">
-              仅需填写参数就可以定制化你所想要的任何基于交换逻辑的智能合约。并且可以设置你所想要的惩罚措施或者其他措施。
+              {{$t('page2.contractCreatorContent')}}
             </div>
           </div>
           <div class="excute">
-            <div class="title">合约执行人</div>
+            <div class="title">{{$t('page2.contractExcutor')}}</div>
             <div class="content">
-              无需复杂操作，就可以依照合约来创建和交易衍生品产品，并进行交易。只要按时履约，就不会被合约惩罚。
+              {{$t('page2.contractExcutorContent')}}
             </div>
           </div>
         </div>
@@ -93,7 +106,7 @@
             Hydro
           </template>
           <template #content>
-            “Arche 协议”同时首发HECO、BSC、ETH；该阶段基于“Arche 协议”推出二层产品--aDEX，ETH的aDEX将部署在zk Sync。
+            {{$t('page3.roadmapContent01')}}
           </template>
         </TimeLine>
         <TimeLine :style="{top: '460px', left: '510px'}">
@@ -101,7 +114,7 @@
             Logos
           </template>
           <template #content>
-            上线标准化池子衍生品，基于远期协议的aInsurance和aOpiton，推出空投和挖矿活动。
+            {{$t('page3.roadmapContent02')}}
           </template>
         </TimeLine>
         <TimeLine :style="{top: '220px', left: '810px'}">
@@ -109,7 +122,7 @@
             Einai
           </template>
           <template #content>
-            上线更多品类的金融衍生品，支持Polkadot网络
+            {{$t('page3.roadmapContent03')}}
           </template>
         </TimeLine>
         <TimeLine :style="{top: '330px', left: '1110px'}">
@@ -117,13 +130,13 @@
             Atomon
           </template>
           <template #content>
-            实物资产上链，定制化链上交割协议和衍生品（与已经完成宝玉石资产鉴定、溯源、上链的JALA Fintech智能仓达成初步合作意向）
+            {{$t('page3.roadmapContent04')}}
           </template>
         </TimeLine>
       </div>
     </div>
     <div class="page4">
-      <div class="text">快来加入下一代金融基础协议的革命吧！</div>
+      <div class="text">{{$t('page5.title')}}</div>
       <div class="text-gradient">Try it now！</div>
       <div class="circle-groups">
         <div class="circle-outer">
@@ -140,6 +153,7 @@ import TimeLine from "@/components/TimeLine.vue";
 import Header from "@/components/Header.vue";
 import Button from "@/components/Button.vue";
 import Card from "@/components/Card.vue";
+// import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 export default {
   name: "Home",
   components: {
@@ -150,26 +164,7 @@ export default {
   },
   data() {
     return {
-      dataTimeline: [
-        {
-          date: "2020--Q4",
-          content:
-            "为BaseFi上的基金产品提供质押借贷、DEX、保险等衍生服务，未来与波卡生态项目紧密合作"
-        },
-        {
-          date: "2021--Q1",
-          content:
-            "在ETH网络部署BTC、ETH及ERC20的波卡生态代币资产合成合约，发起跨链指数基金、波卡生态指数基金、DeFi指数基金三个基金，与社区一起构建"
-        },
-        {
-          date: "2021--Q2",
-          content: "部署BaseFi NFT Protocol到Kusama网络，并且发布合约提供测试"
-        },
-        {
-          date: "2021--Q3",
-          content: "在Kusama网络构建DEX，用波卡上的跨链映射资产完成测试"
-        }
-      ]
+  
     };
   },
   computed: {

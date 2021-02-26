@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <span>现在就尝试Arche</span>
+    <span>{{$t('home.homeButton')}}</span>
     <svg-icon icon-name="iconArrowRight" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import SvgIcon from "@/components/SvgIcon.vue";
 export default {
     components: {
-        SvgIcon
+      SvgIcon
     }
 }
 </script>
@@ -25,9 +25,9 @@ export default {
     align-items: center;
     padding: 0 23px;
     span {
-        font-size: 24px;
-        font-weight: bold;
-        color: #ffffff;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
     }
 }
 
