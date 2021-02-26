@@ -33,35 +33,39 @@
         </div>
       </div>
       <div class="swiper-card">
-        <Card card-color="#1A1A84">
-          <template #card-title>
-            {{$t('page1.card01Title')}}
-          </template>
-          <template #card-content>
-            <ul>
-              <li>{{$t('page1.card01Content01')}}</li>
-              <li>{{$t('page1.card01Content02')}}</li>
-              <li>{{$t('page1.card01Content03')}}</li>
-              <li>{{$t('page1.card01Content04')}}</li>
-              <li>{{$t('page1.card01Content05')}}</li>
-            </ul>
-          </template>
-        </Card>
-        <Card card-color="#621A84" :style="{'margin-left': '20px'}">
-          <template #card-title>
-            {{$t('page1.card02Title')}}
-          </template>
-          <template #card-content>
-            <ul>
-              <li>{{$t('page1.card02Content')}}</li>
-            </ul>
-          </template>
-        </Card>
-         <!-- <swiper class="swiper">
-          <swiper-slide>Slide 1</swiper-slide>
-          <swiper-slide>Slide 2</swiper-slide>
-          <swiper-slide>Slide 3</swiper-slide>
-        </swiper> -->
+         <swiper :options="swiperOption">
+          <swiper-slide>
+            <Card card-color="#1A1A84">
+              <template #card-title>
+                {{$t('page1.card01Title')}}
+              </template>
+              <template #card-content>
+                <ul>
+                  <li>{{$t('page1.card01Content01')}}</li>
+                  <li>{{$t('page1.card01Content02')}}</li>
+                  <li>{{$t('page1.card01Content03')}}</li>
+                  <li>{{$t('page1.card01Content04')}}</li>
+                  <li>{{$t('page1.card01Content05')}}</li>
+                </ul>
+              </template>
+            </Card>
+          </swiper-slide>
+          <swiper-slide>
+            <Card card-color="#621A84">
+              <template #card-title>
+                {{$t('page1.card02Title')}}
+              </template>
+              <template #card-content>
+                <ul>
+                  <li>{{$t('page1.card02Content')}}</li>
+                </ul>
+              </template>
+            </Card>
+          </swiper-slide>
+          <div class="swiper-pagination" slot="pagination"></div>
+          <div class="swiper-button-prev" slot="button-prev"></div>
+          <div class="swiper-button-next" slot="button-next"></div>
+        </swiper>
       </div>
     </div>
     <div class="page2">
@@ -153,18 +157,40 @@ import TimeLine from "@/components/TimeLine.vue";
 import Header from "@/components/Header.vue";
 import Button from "@/components/Button.vue";
 import Card from "@/components/Card.vue";
-// import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
+import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
+
+// import style (>= Swiper 6.x)
+import 'swiper/swiper-bundle.css'
+
 export default {
   name: "Home",
   components: {
     TimeLine,
     Header,
     Button,
-    Card
+    Card,
+    Swiper,
+    SwiperSlide
+  },
+   directives: {
+    swiper: directive
   },
   data() {
     return {
-  
+      swiperOption: {
+        // direction: 'vertical',
+        // mousewheel: true,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        // pagination: {
+        //   el: '.swiper-pagination',
+        //   clickable: true
+        // }
+      }
     };
   },
   computed: {
@@ -274,9 +300,18 @@ export default {
       }
     }
     .swiper-card {
-      display: flex;
+      // display: flex;
       margin-top: 60px;
       margin-left: 160px;
+      .swiper-slide {
+        width: 65%;
+      }
+      .swiper-slide:nth-child(2n) {
+        width: 80%;
+      }
+      .swiper-button-prev, .swiper-button-next {
+        color: #fff;
+      }
     }
   }
   .page2 {
