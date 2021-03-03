@@ -1,153 +1,178 @@
 <template>
   <div class="home">
-    <div class="home-background">
-      <div class="circle-groups">
-        <div class="circle-outer">
-          <div class="circle-inner">
-            <div class="logo"></div>
-            <span class="subtitle">{{$t('home.title01')}}</span>
-            <span class="title">{{$t('home.title02')}}</span>
-            <Button />
+    <!-- <Header /> -->
+    <swiper class="swiperHome" :options="swiperOptionTest">
+      <swiper-slide>
+        <div class="home-background">
+          <div class="circle-groups">
+            <div class="circle-outer">
+              <div class="circle-inner">
+                <div class="logo"></div>
+                <span class="subtitle">{{$t('home.title01')}}</span>
+                <span class="title">{{$t('home.title02')}}</span>
+                <Button />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-    <Header />
-    <div class="page1">
-      <div class="page1-container">
-        <div class="icon"></div>
-        <div class="content">
-          <div class="content-title">{{$t('page1.title')}}</div>
-          <div class="content-text">
-            {{$t('page1.content01')}}
+      </swiper-slide>
+      <swiper-slide>
+        <div class="page1">
+          <Header />
+          <div class="page1-container">
+            <div class="icon"></div>
+            <div class="content">
+              <div class="content-title">{{$t('page1.title')}}</div>
+              <div class="content-text">
+                {{$t('page1.content01')}}
+              </div>
+              <div class="content-text">
+                {{$t('page1.content02')}}
+              </div>
+              <div class="content-text">
+                {{$t('page1.content03')}}
+              </div>
+              <div class="content-text">
+                {{$t('page1.content04')}}
+              </div>
+            </div>
           </div>
-          <div class="content-text">
-            {{$t('page1.content02')}}
+          <div class="swiper-card">
+            <swiper :options="swiperOption">
+              <swiper-slide>
+                <Card card-color="#1A1A84">
+                  <template #card-title>
+                    {{$t('page1.card01Title')}}
+                  </template>
+                  <template #card-content>
+                    <ul>
+                      <li>{{$t('page1.card01Content01')}}</li>
+                      <li>{{$t('page1.card01Content02')}}</li>
+                      <li>{{$t('page1.card01Content03')}}</li>
+                      <li>{{$t('page1.card01Content04')}}</li>
+                      <li>{{$t('page1.card01Content05')}}</li>
+                    </ul>
+                  </template>
+                </Card>
+              </swiper-slide>
+              <swiper-slide>
+                <Card card-color="#621A84">
+                  <template #card-title>
+                    {{$t('page1.card02Title')}}
+                  </template>
+                  <template #card-content>
+                    <ul>
+                      <li>{{$t('page1.card02Content')}}</li>
+                    </ul>
+                  </template>
+                </Card>
+              </swiper-slide>
+              <!-- <div class="swiper-pagination" slot="pagination"></div> -->
+              <div class="swiper-button-prev" slot="button-prev"></div>
+              <div class="swiper-button-next" slot="button-next"></div>
+            </swiper>
           </div>
-          <div class="content-text">
-            {{$t('page1.content03')}}
-          </div>
-          <div class="content-text">
-            {{$t('page1.content04')}}
-          </div>
+          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
         </div>
-      </div>
-      <div class="swiper-card">
-         <swiper :options="swiperOption">
-          <swiper-slide>
-            <Card card-color="#1A1A84">
-              <template #card-title>
-                {{$t('page1.card01Title')}}
-              </template>
-              <template #card-content>
-                <ul>
-                  <li>{{$t('page1.card01Content01')}}</li>
-                  <li>{{$t('page1.card01Content02')}}</li>
-                  <li>{{$t('page1.card01Content03')}}</li>
-                  <li>{{$t('page1.card01Content04')}}</li>
-                  <li>{{$t('page1.card01Content05')}}</li>
-                </ul>
-              </template>
-            </Card>
-          </swiper-slide>
-          <swiper-slide>
-            <Card card-color="#621A84">
-              <template #card-title>
-                {{$t('page1.card02Title')}}
-              </template>
-              <template #card-content>
-                <ul>
-                  <li>{{$t('page1.card02Content')}}</li>
-                </ul>
-              </template>
-            </Card>
-          </swiper-slide>
-          <div class="swiper-pagination" slot="pagination"></div>
-          <div class="swiper-button-prev" slot="button-prev"></div>
-          <div class="swiper-button-next" slot="button-next"></div>
-        </swiper>
-      </div>
-    </div>
-    <div class="page2">
-      <!-- <Header /> -->
-      <div class="page2-container">
-        <div class="content">
-          <div class="content-title">{{$t('page2.title')}}</div>
-          <div class="content-text">
-            {{$t('page2.content01')}}
-          </div>
-        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="page2">
+          <Header />
+          <div class="page2-container">
+            <div class="content">
+              <div class="content-title">{{$t('page2.title')}}</div>
+              <div class="content-text">
+                {{$t('page2.content01')}}
+              </div>
+            </div>
 
-        <div class="ellipse-groups">
-          <div class="ellipse-outer">
-             <div class="ellipse-middle">
-                <div class="ellipse-inner">
-                  <div class="diagram"></div>
+            <div class="ellipse-groups">
+              <div class="ellipse-outer">
+                <div class="ellipse-middle">
+                    <div class="ellipse-inner">
+                      <div class="diagram"></div>
+                    </div>
                 </div>
-             </div>
-          </div>
-        </div>
-        <div class="info">
-          <div class="create">
-            <div class="title">{{$t('page2.contractCreator')}}</div>
-            <div class="content">
-              {{$t('page2.contractCreatorContent')}}
+              </div>
+            </div>
+            <div class="info">
+              <div class="create">
+                <div class="title">{{$t('page2.contractCreator')}}</div>
+                <div class="content">
+                  {{$t('page2.contractCreatorContent')}}
+                </div>
+              </div>
+              <div class="excute">
+                <div class="title">{{$t('page2.contractExcutor')}}</div>
+                <div class="content">
+                  {{$t('page2.contractExcutorContent')}}
+                </div>
+              </div>
             </div>
           </div>
-          <div class="excute">
-            <div class="title">{{$t('page2.contractExcutor')}}</div>
-            <div class="content">
-              {{$t('page2.contractExcutorContent')}}
+          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="page3">
+          <Header />
+          <div class="content">
+            <div class="content-title">{{$t('page3.title')}}</div>
+            <!-- <div class="content-text">
+              {{$t('page2.content01')}}
+            </div> -->
+          </div>
+          <div class="svgLine">
+            <TimeLine :style="{top: '540px', left: '110px'}">
+              <template #title>
+                Hydro
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent01')}}
+              </template>
+            </TimeLine>
+            <TimeLine :style="{top: '460px', left: '510px'}">
+              <template #title>
+                Logos
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent02')}}
+              </template>
+            </TimeLine>
+            <TimeLine :style="{top: '220px', left: '810px'}">
+              <template #title>
+                Einai
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent03')}}
+              </template>
+            </TimeLine>
+            <TimeLine :style="{top: '330px', left: '1110px'}">
+              <template #title>
+                Atomon
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent04')}}
+              </template>
+            </TimeLine>
+          </div>
+          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <div class="page4">
+          <Header />
+          <div class="text">{{$t('page5.title')}}</div>
+          <div class="text-gradient">Try it now！</div>
+          <div class="circle-groups">
+            <div class="circle-outer">
+              <div class="circle-inner"></div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="page3">
-      <div class="svgLine">
-        <TimeLine :style="{top: '540px', left: '110px'}">
-          <template #title>
-            Hydro
-          </template>
-          <template #content>
-            {{$t('page3.roadmapContent01')}}
-          </template>
-        </TimeLine>
-        <TimeLine :style="{top: '460px', left: '510px'}">
-          <template #title>
-            Logos
-          </template>
-          <template #content>
-            {{$t('page3.roadmapContent02')}}
-          </template>
-        </TimeLine>
-        <TimeLine :style="{top: '220px', left: '810px'}">
-          <template #title>
-            Einai
-          </template>
-          <template #content>
-            {{$t('page3.roadmapContent03')}}
-          </template>
-        </TimeLine>
-        <TimeLine :style="{top: '330px', left: '1110px'}">
-          <template #title>
-            Atomon
-          </template>
-          <template #content>
-            {{$t('page3.roadmapContent04')}}
-          </template>
-        </TimeLine>
-      </div>
-    </div>
-    <div class="page4">
-      <div class="text">{{$t('page5.title')}}</div>
-      <div class="text-gradient">Try it now！</div>
-      <div class="circle-groups">
-        <div class="circle-outer">
-          <div class="circle-inner"></div>
-        </div>
-      </div>
-    </div>
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </div>
 </template>
 
@@ -160,8 +185,8 @@ import Card from "@/components/Card.vue";
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
 // import style (>= Swiper 6.x)
-import 'swiper/swiper-bundle.css'
-
+// import 'swiper/swiper-bundle.css'
+import 'swiper/css/swiper.css'
 export default {
   name: "Home",
   components: {
@@ -172,24 +197,59 @@ export default {
     Swiper,
     SwiperSlide
   },
-   directives: {
+  directives: {
     swiper: directive
   },
   data() {
+    const VM = this
     return {
+      allowNext: true,
+      swiperOptionHome: {
+        observer: true,
+        mousewheelControl: false,
+        slidesPerView: 1,
+        freeMode: false,
+        freeModeSticky: true,
+        direction: 'vertical',
+        hashNavigation: {
+          watchState: true,
+          replaceState: true,
+        },
+        on: {
+          transitionStart() {
+            // Update if start 
+            VM.allowNext = false
+          },
+          transitionEnd() {
+            // Update when end
+            VM.allowNext = true
+          },
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
+      },
       swiperOption: {
-        // direction: 'vertical',
-        // mousewheel: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
         },
         slidesPerView: 'auto',
         spaceBetween: 30,
-        // pagination: {
-        //   el: '.swiper-pagination',
-        //   clickable: true
-        // }
+      },
+      swiperOptionTest: {
+        direction: 'vertical',
+        slidesPerView: 1,
+        keyboard: {
+          enabled: true,
+        },
+        // spaceBetween: 30,
+        mousewheel: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        }
       }
     };
   },
@@ -200,11 +260,32 @@ export default {
       } else {
         return false;
       }
+    },
+    swiper() {
+      return this.$refs.mySwiper.$swiper
+    },
+    GetScrollTop() {
+      console.log(window.scrollY)
     }
   },
+  // mounted() {
+  //   //Bind scroll and content
+  //     this.content = document.querySelector('body');
+  //     this.content.addEventListener("wheel" , this.watchScrollWheel )
+  // },
+  // destroyed() {
+  //     //Remove when destroyed, to prevent memory leaks
+  //     this.content.removeEventListener("wheel" , this.watchScrollWheel )
+  // },
   methods: {
     jump(url) {
       window.location.href = url;
+    },
+    watchScrollWheel(e){
+      //Check if we can scroll to new slide
+      if(this.allowNext){
+        e.deltaY < 0 ? this.swiper.slideNext() : this.swiper.slidePrev();
+      }
     }
   }
 };
@@ -212,6 +293,25 @@ export default {
 
 <style lang="scss" scoped>
 .home {
+  .swiperHome {
+    height: 100vh;
+    .swiper-pagination {
+      width: 37px;
+      height: 166px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    ::v-deep .swiper-pagination-bullet {
+      background: #ffffff;
+    }
+    // ::v-deep .swiper-pagination-bullet-active {
+    //   background: #023AFF;
+    // }
+  }
   .home-background {
     // position: absolute;
     width: 100%;
@@ -403,8 +503,27 @@ export default {
     width: 100%;
     height: 100vh;
     background:#05050F;
+    .content {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      text-align: left;
+      margin-left: 160px;
+      .content-title {
+        font-weight: bold;
+        font-size: 30px;
+        color: #ffffff;
+      }
+      .content-text {
+        width: 819px;
+        font-size: 14px;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    }
     .svgLine {
       background-image: url('../assets/imgs/DecorativeLine.svg');
+      top: -260px;
       width: 100%;
       height: 100%;
       position: relative;
@@ -470,6 +589,9 @@ export default {
         }
       }
     }
+  }
+  .page1, .page2, .page3, .page4 {
+    padding: 40px 0 0 0;
   }
 }
 </style>

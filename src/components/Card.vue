@@ -12,8 +12,10 @@
 <script>
 export default {
     props: {
-        cardColor: String,
-        required: true
+        cardColor: {
+            type: String,
+            required: true
+        }
     },
     computed: {
         cardBackgroundColor() {
@@ -28,10 +30,10 @@ export default {
 <style lang="scss" scoped>
 .card {
     width: 707px;
-    height: 246px;
-    border-radius: 80px 80px 80px 30px;
+    height: 176px;
+    border-radius: 40px 40px 40px 20px;
     // FIXME:
-    padding: 50px 0 0 100px;
+    padding: 20px 20px 20px 100px;
     text-align: left;
     .card-title {
         font-weight: bold;

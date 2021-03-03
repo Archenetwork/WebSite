@@ -16,7 +16,8 @@
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
 // import style (>= Swiper 6.x)
-import 'swiper/swiper-bundle.css'
+// import 'swiper/swiper-bundle.css'
+import 'swiper/css/swiper.css'
 export default {
   components: {
     Swiper,
@@ -26,7 +27,7 @@ export default {
     return {
       swiperOption: {
         direction: 'vertical',
-        // slidesPerView: 1,
+        slidesPerView: 1,
         // spaceBetween: 30,
         mousewheel: true,
         pagination: {

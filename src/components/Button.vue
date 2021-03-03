@@ -24,6 +24,7 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 0 23px;
+    z-index: 999;
     span {
       font-size: 24px;
       font-weight: bold;

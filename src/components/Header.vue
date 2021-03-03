@@ -35,8 +35,8 @@ export default {
         }
       ],
       currentLanguage: {
-        name: 'EN',
-        icon: 'iconlanguage-en'
+        name: 'CN',
+        icon: 'iconlanguage-cn'
       }
     }
   },
@@ -52,8 +52,8 @@ export default {
 
 <style lang="scss" scoped>
 .nav {
-  position: -webkit-sticky;
-  position: sticky;
+  // position: -webkit-sticky;
+  // position: sticky;
   top: 40px;
   margin: 0 auto;
   width: 1200px;
