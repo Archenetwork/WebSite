@@ -1,16 +1,22 @@
 {
     "home": {
-        "title01": "下一代去中心化金融协议构建方式",
+        "title01": "构建一切金融衍生品的去中心化基础协议",
         "title02": "让我们在Arche上构建",
-        "homeButton": "现在就尝试Arche"
+        "homeButton": "现在就尝试Arche",
+        "typedString01": "远期",
+        "typedString02": "期权",
+        "typedString03": "期货",
+        "typedString04": "保险",
+        "typedString05": "一切"
     },
     "page1": {
         "title": "Arche是什么",
-        "content01": "Arche是一个合约工厂和一套智能合约协议标准。",
-        "content02": "它实现了交易中最为简单的一套逻辑，既用A交换B。",
-        "content03": "但不简单的是，我们为每一笔交易都生成了一个智能合约来约束它且给交易双方生成了一套可以证明自己会履行交易的ERC20凭证。",
+        "content01": "Arche是一套去中心化金融合同的协议标准与合约工厂。",
+        "content02": "用户可以使用Arche创建任何资产的去中心化合同，生成定制化的金融衍生品。Arche提供订单薄、预言机、清算机制、交易激励等多种去中心化组件，提高定制化金融衍生品的稳定安全与流动性。",
+        "content03": "Arche协议支持构建的金融合同包括但不限于远期、期货、期权、保险等多种衍生品市场，资产类型包括但不限于链上资产、指数、状态、锚定资产、合成资产等多种资产类型。",
         "content04": "因而，在这套协议上，我们可以像在现实生活中签合同一样，来约定双方的交易在何时发生、用什么标的物交易、保证金如何执行、惩罚如何执行等一些列操作。并且通过生成的ERC20凭证，做进一步的衍生品交易。",
         "card01Title": "金融衍生品的基础设施",
+        "card01Content00": "在这样一个开放的金融衍生品基础设施中，基于完备的逻辑，你可以通过设置参数与凭证组合，做出任何一种你想要金融衍生品。",
         "card01Content01": "将交易时间延后，你可以得到一个远期交换的合约产品。",
         "card01Content02": "将得到的凭证二次流转，你就可以得到一个期权类产品。",
         "card01Content03": "引入预言机，你可以在凭证基础上做出一个有爆仓效果的杠杆类产品。",
@@ -29,10 +35,10 @@
     },
     "page3": {
         "title": "Arche如何发展",
-        "roadmapContent01": "“Arche 协议”同时首发HECO、BSC、ETH；该阶段基于“Arche 协议”推出二层产品--aDEX，ETH的aDEX将部署在zk Sync。",
-        "roadmapContent02": "上线标准化池子衍生品，基于远期协议的aInsurance和aOpiton，推出空投和挖矿活动。",
-        "roadmapContent03": "上线更多品类的金融衍生品，支持Polkadot网络",
-        "roadmapContent04": "实物资产上链，定制化链上交割协议和衍生品（与已经完成宝玉石资产鉴定、溯源、上链的JALA Fintech智能仓达成初步合作意向）"
+        "roadmapContent01": "Arche协议首发Heco、BSC、ETH测试网,推出测试网用户竞赛空投；",
+        "roadmapContent02": "上线Heco、BSC、ETH主网,推出合作流动性矿池；",
+        "roadmapContent03": "推出通用型定制金融衍生品协议, 对赌、保险等协议；",
+        "roadmapContent04": "推出无抵押合成资产衍生品协议，开启开发者竞赛与扶持计划。"
     },
     "page4": {
         "title": "Arche团队介绍"

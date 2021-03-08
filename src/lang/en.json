@@ -1,43 +1,49 @@
 {
     "home": {
-        "title01": "下一代去中心化金融协议构建方式",
-        "title02": "让我们在Arche上构建",
-        "homeButton": "Try it now"
+        "title01": "Building for all financial derivatives",
+        "title02": "Let's build",
+        "homeButton": "Try Arche Now",
+        "typedString01": "Forwards",
+        "typedString02": "Future",
+        "typedString03": "Swaps",
+        "typedString04": "Options",
+        "typedString05": "Everything"
     },
     "page1": {
-        "title": "Waht is Arche",
-        "content01": "Arche是一个合约工厂和一套智能合约协议标准。",
-        "content02": "它实现了交易中最为简单的一套逻辑，既用A交换B。",
-        "content03": "但不简单的是，我们为每一笔交易都生成了一个智能合约来约束它且给交易双方生成了一套可以证明自己会履行交易的ERC20凭证。",
+        "title": "What is Arche",
+        "content01": "Arche is a  standards for decentralized financial contracts on blockchain.",
+        "content02": "Users can use Arche to create decentralized contracts for any asset and generate customized financial derivatives. Arche provides order book, Oracle, clearing mechanism, transaction incentive and other decentralized components to improve the stability, security and liquidity of customized financial derivatives.",
+        "content03": "The ARCHE agreement supports the construction of financial contracts including, but not limited to, the forward, futures, options, insurance and other derivative markets. Asset types include but are not limited to on-chain assets, index, status, anchored assets, synthetic assets and other asset types.",
         "content04": "因而，在这套协议上，我们可以像在现实生活中签合同一样，来约定双方的交易在何时发生、用什么标的物交易、保证金如何执行、惩罚如何执行等一些列操作。并且通过生成的ERC20凭证，做进一步的衍生品交易。",
-        "card01Title": "金融衍生品的基础设施",
-        "card01Content01": "将交易时间延后，你可以得到一个远期交换的合约产品。",
-        "card01Content02": "将得到的凭证二次流转，你就可以得到一个期权类产品。",
-        "card01Content03": "引入预言机，你可以在凭证基础上做出一个有爆仓效果的杠杆类产品。",
-        "card01Content04": "加入自动行权或者弃权的功能，你可以得到一个功能近似于保险的产品。",
-        "card01Content05": "将期权类产品任意组合，你可以得到一个去中心化的组合资产产品。",
-        "card02Title": "人人可构建的可信交易合同平台",
-        "card02Content": "合同的基础就是可信交换。使用Arche协议标准，我们做到了一个去中心化自动生成合同的自助平台。在这个平台中，你可以以ERC20的凭证约定双方交换什么或者说实现什么来最终触发合约的结果。进而达到我们想要与他人构筑的互信结果。在这个基础上，我们就可以做到类似于众筹、期权激励、合同签署等一些列类似于合同才能达到的效果。而这些全部都是去中心化的，并且可以自动执行和触发的。"
+        "card01Title": "Infrastructure of Financial Derivatives",
+        "card01Content00": "In such an open financial derivatives infrastructure, you can make any kind of financial derivatives you want by setting parameters and credential combinations based on a complete logic.",
+        "card01Content01": "You will get a forward exchange contract product by postponing the transaction.",
+        "card01Content02": "You will get an option product by transferring the voucher twice.",
+        "card01Content03": "You will make a leverage product with burst effect on the basis of voucher with the introduction of Oracle.",
+        "card01Content04": "You will get a function similar to insurance products by adding the automatic exercise or waiver function.",
+        "card01Content05": "You will get a decentralized portfolio if you combine the option products arbitrarily.",
+        "card02Title": "Trusted Transaction Contract Platform Built by Anyone",
+        "card02Content": "The basis of contract is trusted exchange. We have achieved a decentralized self-service platform for automatic contract generation by Using the Arche protocol standard. In this platform, you can use ERC20 certificate to specify what both parties exchange or achieve to trigger the final result of the contract. So as to achieve the mutual trust we want to build with others. On this basis, we can achieve the effects similar to crowdfunding, option incentive, contract signing, etc. All of these are decentralized and can be executed and triggered automatically."
     },
     "page2": {
-        "title": "Arche如何工作",
-        "content01": "Arche有多个角色，其中最主要的就是合约创建人、合约执行人与合约。通过参数化的方式，你可以生成任何一种想要的金融衍生品合约。并且这些智能合约全部都是去中心化自主运行和生成的，无需担心被篡改等问题。",
-        "contractCreator": "合约创建人",
-        "contractCreatorContent": "仅需填写参数就可以定制化你所想要的任何基于交换逻辑的智能合约。并且可以设置你所想要的惩罚措施或者其他措施。",
-        "contractExcutor": "合约执行人",
-        "contractExcutorContent": "无需复杂操作，就可以依照合约来创建和交易衍生品产品，并进行交易。只要按时履约，就不会被合约惩罚。"
+        "title": "How Arche Works",
+        "content01": "Arche has many roles. Among them, the most important ones are contract creator, contract executor and contract. Through parameterization, you can generate any kind of financial derivatives contract you want. And these smart contracts are all decentralized and self generated, so there is no need to worry about tampering.",
+        "contractCreator": "Contract Creator:",
+        "contractCreatorContent": "Just fill in the parameters to customize any smart contract you want based on switching logic. And you can set the punishment or other measures you want.",
+        "contractExcutor": "Contract Executor:",
+        "contractExcutorContent": "Derivatives can be created and traded according to contracts and traded without complex operations. There is no contractual penalty as long as the contract is performed on time."
     },
     "page3": {
-        "title": "Arche如何发展",
-        "roadmapContent01": "“Arche 协议”同时首发HECO、BSC、ETH；该阶段基于“Arche 协议”推出二层产品--aDEX，ETH的aDEX将部署在zk Sync。",
-        "roadmapContent02": "上线标准化池子衍生品，基于远期协议的aInsurance和aOpiton，推出空投和挖矿活动。",
-        "roadmapContent03": "上线更多品类的金融衍生品，支持Polkadot网络",
-        "roadmapContent04": "实物资产上链，定制化链上交割协议和衍生品（与已经完成宝玉石资产鉴定、溯源、上链的JALA Fintech智能仓达成初步合作意向）"
+        "title": "How Arche Develops",
+        "roadmapContent01": "Arche agreement to launch HECO, BSC, ETH. It is now running on the test net and airdrops to users who have used the test net.",
+        "roadmapContent02": "We will run on HECO, BSC, ETH mainnet. And we will launch cooperative liquidity mining.",
+        "roadmapContent03": "We will launch universal customized financial derivative agreements such as betting, insurance and so on.",
+        "roadmapContent04": "We will launch no pledge assets synthetic derivatives deal and open the developer competition and support programs."
     },
     "page4": {
         "title": "Arche团队介绍"
     },
     "page5": {
-        "title": "快来加入下一代金融基础协议的革命吧！"
+        "title": "Come join the revolution in the next generation!"
     }
 }
