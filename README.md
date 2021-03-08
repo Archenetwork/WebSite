@@ -1,4 +1,4 @@
-# basefi
+# Arche
 
 ## Project setup
 ```
