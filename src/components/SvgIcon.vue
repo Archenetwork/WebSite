@@ -43,8 +43,9 @@ export default {
 
 <style lang="scss" scoped>
 .noText {
-    // height: 100%;
-    // width: 100%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 .column {
     height: 50px;

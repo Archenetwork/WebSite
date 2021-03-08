@@ -1,9 +1,9 @@
 <template>
   <div class="nav">
     <div class="logo"></div>
-    <span>FAQ</span>
-    <span>Blog</span>
-    <span>Forum</span>
+    <span @click="jump('https://gitbook.arche.network/')">Docs</span>
+    <span @click="jump('https://archenetwork.medium.com/')">Blog</span>
+    <span @click="jump('https://discord.gg/ah8h2sqF2B')">Forum</span>
     <dropdown
       :options = "languageList"
       :selected = "currentLanguage"
@@ -11,7 +11,7 @@
     >
     </dropdown>
     <div class="button">
-      <span>Get APP</span>
+      <span @click="jump('https://app.arche.network/')">Get APP</span>
     </div>
   </div>
 </template>
@@ -35,28 +35,44 @@ export default {
         }
       ],
       currentLanguage: {
-        name: 'CN',
-        icon: 'iconlanguage-cn'
+        name: '',
+        icon: ''
       }
     }
   },
   methods: {
+    getCurrentLanguage() {
+      const langName = localStorage.getItem('languageName') || 'EN';
+      const langIcon = localStorage.getItem('languageIcon') || 'iconlanguage-en';
+      this.currentLanguage.name = langName;
+      this.currentLanguage.icon = langIcon;
+      this.$i18n.locale = langName;
+    },
     updateOption(data){
       this.$i18n.locale = data.name;
       localStorage.setItem('languageName',data.name);
       localStorage.setItem('languageIcon',data.icon);
+      setTimeout(() => {
+        window.location.reload();
+      })
+    },
+    jump(url) {
+      window.open(url, '_blank');
     }
+  },
+  mounted() {
+    this.getCurrentLanguage();
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .nav {
-  // position: -webkit-sticky;
-  // position: sticky;
-  top: 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
   margin: 0 auto;
-  width: 1200px;
+  width: 80%;
   height: 90px;
   border-radius: 100px;
   background: $nav-background;
@@ -74,6 +90,7 @@ export default {
     font-size: 18px;
     font-weight: bold;
     color: #E5E5E5;
+    cursor: pointer;
   }
   .button {
     width: 164px;

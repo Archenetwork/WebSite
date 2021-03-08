@@ -39,6 +39,7 @@ export default {
   }
   .content {
     width: 280px;
+    font-size: 16px;
     text-align: left;
     padding: 15px;
     background: rgba(0, 0, 0, 0.65);

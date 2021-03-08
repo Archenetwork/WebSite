@@ -1,10 +1,10 @@
 <template>
     <div class="dropdown-group">
-        <div class="box">
-            <div class="dropdown-toggle" @click.stop="toggleMenu()">
+        <div class="box" @click.stop="toggleMenu()">
+            <div class="dropdown-toggle">
                 <div class="dropdown-toggle-item">
-                    <span>{{ selectedOption.name }}</span>
-                    <svg-icon :icon-name="selectedOption.icon" :font-size="25">
+                    <!-- <span>{{ selectedOption.name }}</span> -->
+                    <svg-icon :icon-name="selectedOption.icon" class="test">
                     </svg-icon>
                 </div>
             </div>
@@ -101,7 +101,7 @@ export default {
         content: '';
         position: absolute;
         bottom: 8px;
-        right: -10px;
+        right: -6px;
         transform: rotate(90deg);
         width: 0; 
         height: 0;
@@ -121,6 +121,12 @@ export default {
             line-height: 26px;
             display: flex;
             justify-content: space-around;
+            .test {
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
         }
     }
 }
@@ -135,19 +141,19 @@ export default {
     position: absolute;
     margin-top: 4px;
     margin-left: -30px;
-    width: 72px;
-    height: 64px;
+    width: 81PX;
+    height: 65PX;
     background: #FFFFFF;
     box-shadow: 0px 3px 4px rgba(243, 67, 43, 0.1);
     border-radius: 5px;
     // 显示隐藏动画
 
     .item {
-        height: 30px;
+        height: 30PX;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        font-size: 14px;
+        font-size: 14PX;
         color: #000;
         &:hover {
             background: rgba(0, 0, 0, 0.1);

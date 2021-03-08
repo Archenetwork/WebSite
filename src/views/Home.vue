@@ -1,24 +1,44 @@
 <template>
   <div class="home">
-    <!-- <Header /> -->
+    <Header />
     <swiper class="swiperHome" :options="swiperOptionTest">
       <swiper-slide>
         <div class="home-background">
+          <dynamic-background />
           <div class="circle-groups">
             <div class="circle-outer">
               <div class="circle-inner">
                 <div class="logo"></div>
                 <span class="subtitle">{{$t('home.title01')}}</span>
-                <span class="title">{{$t('home.title02')}}</span>
+                <vue-typed-js 
+                  v-if="isEN"
+                  :strings="[$t('home.typedString01'), $t('home.typedString02'),$t('home.typedString03'),$t('home.typedString04'),$t('home.typedString05')]"
+                  :typeSpeed="150"
+                >
+                  <span class="title">{{$t('home.title02')}} <span class="typing"></span><span class="title">on Arche</span></span>
+                </vue-typed-js>
+                <vue-typed-js 
+                  v-else
+                  :strings="['远期','期权','期货','保险','一切']"
+                  :typeSpeed="150"
+                >
+                  <span class="title">{{$t('home.title02')}}<span class="typing"></span></span>
+                </vue-typed-js>
                 <Button />
               </div>
+            </div>
+          </div>
+          <!-- FIXME: -->
+          <icon-group :style="{'position': 'absolute', 'bottom': '100px', 'right': '10px'}"/>
+          <div class="mouse">
+            <div class="point">
             </div>
           </div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="page1">
-          <Header />
+          <!-- <Header /> -->
           <div class="page1-container">
             <div class="icon"></div>
             <div class="content">
@@ -32,9 +52,9 @@
               <div class="content-text">
                 {{$t('page1.content03')}}
               </div>
-              <div class="content-text">
+              <!-- <div class="content-text">
                 {{$t('page1.content04')}}
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="swiper-card">
@@ -43,6 +63,9 @@
                 <Card card-color="#1A1A84">
                   <template #card-title>
                     {{$t('page1.card01Title')}}
+                  </template>
+                  <template>
+                    <span>{{$t('page1.card01Content00')}}</span>
                   </template>
                   <template #card-content>
                     <ul>
@@ -61,9 +84,7 @@
                     {{$t('page1.card02Title')}}
                   </template>
                   <template #card-content>
-                    <ul>
-                      <li>{{$t('page1.card02Content')}}</li>
-                    </ul>
+                    <span>{{$t('page1.card02Content')}}</span>
                   </template>
                 </Card>
               </swiper-slide>
@@ -72,12 +93,12 @@
               <div class="swiper-button-next" slot="button-next"></div>
             </swiper>
           </div>
-          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
+          <Button  :style="{'position': 'absolute', 'bottom': '140px', 'right': '40px'}"/>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="page2">
-          <Header />
+          <!-- <Header /> -->
           <div class="page2-container">
             <div class="content">
               <div class="content-title">{{$t('page2.title')}}</div>
@@ -90,7 +111,8 @@
               <div class="ellipse-outer">
                 <div class="ellipse-middle">
                     <div class="ellipse-inner">
-                      <div class="diagram"></div>
+                      <div class="diagram_EN" v-if="isEN"></div>
+                      <div class="diagram" v-else></div>
                     </div>
                 </div>
               </div>
@@ -110,20 +132,20 @@
               </div>
             </div>
           </div>
-          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
+          <Button  :style="{'position': 'absolute', 'bottom': '140px', 'right': '40px'}"/>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="page3">
-          <Header />
+          <!-- <Header /> -->
           <div class="content">
             <div class="content-title">{{$t('page3.title')}}</div>
             <!-- <div class="content-text">
               {{$t('page2.content01')}}
             </div> -->
           </div>
-          <div class="svgLine">
-            <TimeLine :style="{top: '540px', left: '110px'}">
+          <div class="svgLine" v-if="isEN">
+            <TimeLine class="item01">
               <template #title>
                 Hydro
               </template>
@@ -131,7 +153,7 @@
                 {{$t('page3.roadmapContent01')}}
               </template>
             </TimeLine>
-            <TimeLine :style="{top: '460px', left: '510px'}">
+            <TimeLine class="item02">
               <template #title>
                 Logos
               </template>
@@ -139,7 +161,7 @@
                 {{$t('page3.roadmapContent02')}}
               </template>
             </TimeLine>
-            <TimeLine :style="{top: '220px', left: '810px'}">
+            <TimeLine class="item03">
               <template #title>
                 Einai
               </template>
@@ -147,7 +169,7 @@
                 {{$t('page3.roadmapContent03')}}
               </template>
             </TimeLine>
-            <TimeLine :style="{top: '330px', left: '1110px'}">
+            <TimeLine class="item04">
               <template #title>
                 Atomon
               </template>
@@ -156,18 +178,57 @@
               </template>
             </TimeLine>
           </div>
-          <Button  :style="{'position': 'absolute', 'bottom': '40px', 'right': '40px'}"/>
+          <div class="svgLine" v-else>
+            <TimeLine class="item001">
+              <template #title>
+                Hydro
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent01')}}
+              </template>
+            </TimeLine>
+            <TimeLine class="item002">
+              <template #title>
+                Logos
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent02')}}
+              </template>
+            </TimeLine>
+            <TimeLine class="item003">
+              <template #title>
+                Einai
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent03')}}
+              </template>
+            </TimeLine>
+            <TimeLine class="item004">
+              <template #title>
+                Atomon
+              </template>
+              <template #content>
+                {{$t('page3.roadmapContent04')}}
+              </template>
+            </TimeLine>
+          </div>
+          <Button  :style="{'position': 'absolute', 'bottom': '140px', 'right': '40px'}"/>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="page4">
-          <Header />
+          <!-- <Header /> -->
+          <!-- <dynamic-background /> -->
           <div class="text">{{$t('page5.title')}}</div>
-          <div class="text-gradient">Try it now！</div>
+          <div class="text-gradient" @click="jump('https://app.arche.network/')">Try it now！</div>
           <div class="circle-groups">
             <div class="circle-outer">
               <div class="circle-inner"></div>
             </div>
+          </div>
+          <icon-group :style="{'position': 'absolute', 'bottom': '100px', 'right': '10px'}"/>
+          <div class="copyright">
+            <span>©2021 Arche Group. All rights reserved.</span>
           </div>
         </div>
       </swiper-slide>
@@ -182,6 +243,8 @@ import TimeLine from "@/components/TimeLine.vue";
 import Header from "@/components/Header.vue";
 import Button from "@/components/Button.vue";
 import Card from "@/components/Card.vue";
+import DynamicBackground from '@/components/DynamicBackground';
+import IconGroup from "@/components/IconGroup.vue";
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper'
 
 // import style (>= Swiper 6.x)
@@ -195,7 +258,9 @@ export default {
     Button,
     Card,
     Swiper,
-    SwiperSlide
+    SwiperSlide,
+    DynamicBackground,
+    IconGroup
   },
   directives: {
     swiper: directive
@@ -266,6 +331,14 @@ export default {
     },
     GetScrollTop() {
       console.log(window.scrollY)
+    },
+    isEN() {
+      if(!localStorage.getItem('languageName')) {
+        return true
+      }
+      else {
+        return localStorage.getItem('languageName') == 'EN';
+      }
     }
   },
   // mounted() {
@@ -277,15 +350,24 @@ export default {
   //     //Remove when destroyed, to prevent memory leaks
   //     this.content.removeEventListener("wheel" , this.watchScrollWheel )
   // },
+  // mounted() {
+  //   this.isEN();
+  // },
+  // watch: {
+  //   '$i18n.locale': 'isRelaod'
+  // },
   methods: {
     jump(url) {
-      window.location.href = url;
+      window.open(url, '_blank');
     },
     watchScrollWheel(e){
       //Check if we can scroll to new slide
       if(this.allowNext){
         e.deltaY < 0 ? this.swiper.slideNext() : this.swiper.slidePrev();
       }
+    },
+    isReload() {
+      window.location.reload();
     }
   }
 };
@@ -325,8 +407,8 @@ export default {
       justify-content: center;
       align-items: center;
       .circle-outer {
-        width: 704px;
-        height: 604px;
+        width: $home-ellipse-outer-width;
+        height: $home-ellipse-outer-height;
         border: 2px solid rgba(255, 255, 255, 0.1);
         box-sizing: border-box;
         filter: drop-shadow(0px 4px 200px rgba(255, 255, 255, 0.15));
@@ -335,8 +417,8 @@ export default {
         justify-content: center;
         align-items: center;
         .circle-inner {
-          width: 604px;
-          height: 604px;
+          width: $home-ellipse-inner-width;
+          height: $home-ellipse-inner-height;
           background: $circle-color;
           box-shadow: 0px 0px 100px rgba(186, 38, 255, 0.1), 0px 4px 200px rgba(255, 255, 255, 0.15);
           border-radius: 50%;
@@ -348,8 +430,8 @@ export default {
             margin-top: 124px;
             background-image: url('../assets/imgs/home-logo.svg');
             background-size: cover;
-            width: $logo-width / 2;
-            height: $logo-height / 2;
+            width: $logo-width;
+            height: $logo-height;
           }
           span.subtitle {
             margin-top: 47px;
@@ -361,8 +443,31 @@ export default {
             font-size: 36px;
             font-weight: bold;
             color: #ffffff;
+            .typing {
+              color: #012fd0;
+            }
           }
         }
+      }
+    }
+    .mouse {
+      position: absolute;
+      width: 26px;
+      height: 39px;
+      left: 70px;
+      bottom: 100px;
+      border: 1.5px solid #C4C4C4;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      .point {
+        margin-top: 4px;
+        width: 3px;
+        height: 12px;
+        background: #C4C4C4;
+        border-radius: 5px;
       }
     }
   }
@@ -370,12 +475,14 @@ export default {
     width: 100%;
     height: 100vh;
     background:#05050F;
+    overflow: hidden;
     .page1-container {
-      margin-top: 60px;
+      margin-top: 90px;
       display: flex;
       .icon {
-        margin-left: 160px;
+        margin-left: 10%;
         background-image: url('../assets/imgs/exchange.svg');
+        //FIXME:
         width: 133px;
         height: 128px;
         background-size: cover;
@@ -402,7 +509,7 @@ export default {
     .swiper-card {
       // display: flex;
       margin-top: 60px;
-      margin-left: 160px;
+      margin-left: 10%;
       .swiper-slide {
         width: 65%;
       }
@@ -419,15 +526,17 @@ export default {
     height: 100vh;
     background:#05050F;
     .page2-container {
-      // margin-top: 60px;
-      margin-left: 160px;
+      margin-top: 60px;
+      margin-left: 10%;
       .content {
         height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         text-align: left;
-        margin-left: 40px;
+        margin-bottom: 100px;
+        //FIXME:
+        // margin-left: 40px;
         .content-title {
           font-weight: bold;
           font-size: 30px;
@@ -440,10 +549,11 @@ export default {
         }
       }
       .ellipse-groups {
-        margin-top: 100px;
+        // width: 80%;
+        margin: 0 auto;
         .ellipse-outer {
-          width: $ellipse-outer;
-          height: 338px;
+          width: $ellipse-outer-width;
+          height: $ellipse-outer-height;
           background: #000000;
           border: 2px solid rgba(255, 255, 255, 0.15);
           box-shadow: 0px 4px 50px rgba(44, 72, 223, 0.25);
@@ -451,8 +561,8 @@ export default {
           display: flex;
           justify-content: center;
           .ellipse-middle {
-            width: $ellipse-middle;
-            height: 286px;
+            width: $ellipse-middle-width;
+            height: $ellipse-middle-height;
             background: #121111;
             border: 2px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0px 4px 50px rgba(83, 17, 224, 0.25);
@@ -460,17 +570,26 @@ export default {
             display: flex;
             justify-content: center;
             .ellipse-inner {
-              width: $ellipse-inner;
-              height: 242px;
+              width: $ellipse-inner-width;
+              height: $ellipse-inner-height;
               background: #000000;
               border: 2px solid rgba(255, 255, 255, 0.15);
               box-shadow: 0px 4px 50px rgba(22, 2, 255, 0.25);
               border-radius: 50%;
+              display: flex;
+              justify-content: center;
               .diagram {
                 background-image: url('../assets/imgs/FlowChart.svg');
                 background-size: cover;
-                width: $diagram-width / 1.2;
-                height: $diagram-height / 1.2;
+                width: $diagram-width;
+                height: $diagram-height;
+                margin-top: -80px;
+              }
+              .diagram_EN {
+                background-image: url('../assets/imgs/FlowChart_EN.svg');
+                background-size: cover;
+                width: $diagram-width;
+                height: $diagram-height;
                 margin-top: -80px;
               }
             }
@@ -481,10 +600,11 @@ export default {
         margin-top: 40px;
         height: 80px;
         display: flex;
-        text-align: left;
+        justify-content: flex-start;
         .create, .excute {
           display: flex;
           flex-direction: column;
+          align-items: flex-start;
           .title {
             font-weight: bold;
             font-size: 16px;
@@ -496,6 +616,9 @@ export default {
             color: rgba(255, 255, 255, 0.7);
           }
         }
+        .excute {
+          margin-left: 40px;
+        }
       }
     }
   }
@@ -504,12 +627,12 @@ export default {
     height: 100vh;
     background:#05050F;
     .content {
-      margin-top: 40px;
+      margin-top: 60px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       text-align: left;
-      margin-left: 160px;
+      margin-left: 10%;
       .content-title {
         font-weight: bold;
         font-size: 30px;
@@ -522,11 +645,44 @@ export default {
       }
     }
     .svgLine {
+      margin-top: -220px;
       background-image: url('../assets/imgs/DecorativeLine.svg');
-      top: -260px;
-      width: 100%;
-      height: 100%;
+      // width: $svgLine-width;
+      // height: $svgLine-height;
+      width: 1920px;
+      height: 1080px;
+      background-size: cover;
+      // background-position: center;
       position: relative;
+      // transform: rotate(-15deg);
+      .item01 {
+        top: 795px;
+        left: 160px;
+      }
+      .item02 {
+        top: 620px;
+        left: 510px;
+      }.item03 {
+        top: 515px;
+        left: 940px;
+      }.item04 {
+        top: 345px;
+        left: 1210px;
+      }
+      .item001 {
+        top: 795px;
+        left: 125px;
+      }
+      .item002 {
+        top: 615px;
+        left: 510px;
+      }.item003 {
+        top: 515px;
+        left: 930px;
+      }.item004 {
+        top: 325px;
+        left: 1210px;
+      }
     }
   }
   .page4 {
@@ -562,13 +718,13 @@ export default {
       }
     }
     .circle-groups {
-      margin-bottom: -500px;
+      margin-bottom: -550px;
       display: flex;
       justify-content: center;
       align-items: center;
       .circle-outer {
-        width: 704px;
-        height: 604px;
+        width: $home-ellipse-outer-width;
+        height: $home-ellipse-outer-height;
         border: 2px solid rgba(255, 255, 255, 0.1);
         box-sizing: border-box;
         filter: drop-shadow(0px 4px 200px rgba(255, 255, 255, 0.15));
@@ -577,8 +733,8 @@ export default {
         justify-content: center;
         align-items: center;
         .circle-inner {
-          width: 604px;
-          height: 604px;
+          width: $home-ellipse-inner-width;
+          height: $home-ellipse-inner-height;
           background: $circle-color;
           box-shadow: 0px 0px 100px rgba(186, 38, 255, 0.1), 0px 4px 200px rgba(255, 255, 255, 0.15);
           border-radius: 50%;
@@ -587,6 +743,16 @@ export default {
           justify-content: flex-start;
           align-items: center;
         }
+      }
+    }
+    .copyright {
+      position: absolute;
+      left: 70px;
+      bottom: 100px;
+      span {
+        font-size: 16px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
       }
     }
   }

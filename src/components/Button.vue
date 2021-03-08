@@ -1,5 +1,5 @@
 <template>
-  <div class="button">
+  <div class="button" @click="jump">
     <span>{{$t('home.homeButton')}}</span>
     <svg-icon icon-name="iconArrowRight" />
   </div>
@@ -8,16 +8,24 @@
 <script>
 import SvgIcon from "@/components/SvgIcon.vue";
 export default {
-    components: {
-      SvgIcon
+  components: {
+    SvgIcon
+  },
+  methods: {
+    jump() {
+      window.open(
+        'https://app.arche.network/',
+        '_blank' // <- This is what makes it open in a new window.
+      );
     }
+  }
 }
 </script>
 
 <style lang="scss" scoped>
 .button {
-    width: 293px;
-    height: 64px;
+    width: $button-width;
+    height: $button-height;
     background: #023AFF;
     border-radius: 122px;
     display: flex;
@@ -25,6 +33,7 @@ export default {
     align-items: center;
     padding: 0 23px;
     z-index: 999;
+    cursor: pointer;
     span {
       font-size: 24px;
       font-weight: bold;
